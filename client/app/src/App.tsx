@@ -31,12 +31,6 @@ import useComment from "./hooks/useComment";
 import "./App.css";
 
 function App() {
-  /**
-   * If you want to view README.md of 'dev-portfolio', go to the link below.
-   * {@link https://github.com/modern-agile-team/dev-portfolio#readme}
-   */
-
-  /* These are variables and handler functions used in VisitorComment component. */
   const {
     comment,
     commentList,
@@ -49,34 +43,20 @@ function App() {
   } = useComment();
 
   return (
-    /**
-     * The 'className' in the <div> tag surrounding the components of 'dev-portfolio' must be 'App'.
-     * Only then can the SideBar in the <Header> component recognize id props and automatically assign all components into the SideBar.
-     */
     <div className="App">
-      {/**
-       * @component Header
-       * {@link https://github.com/modern-agile-team/dev-portfolio#header}
-       */}
       <Header
-        headerBackgroundColor={color.mainColor}
+        headerBackgroundColor={color.lightGrey}
         logoOption={{
           redirectUrl: "/",
           title: "헤더헤더헤더헤더헤더헤더헤더",
           logoHidden: true,
-          titleColor: `${color.pointColor}`,
+          titleColor: `gray`,
           titleSize: "30px",
         }}
         channels={[
           {
             name: "github",
-            redirectUrl: "https://",
-            color: `${color.pointColor}`,
-            size: "30px",
-          },
-          {
-            name: "facebook",
-            redirectUrl: "https://",
+            redirectUrl: "https://github.com/pho9902",
             color: `${color.pointColor}`,
             size: "30px",
           },
@@ -99,45 +79,19 @@ function App() {
         }}
       />
 
-      {/**
-       * Just introduction for dev-portfolio-app.
-       *
-       * If you want to view internal of Introduction,
-       * go to the './src/common/instruction/Introduction.tsx'
-       */}
       <Introduction id="['Manual Introduction', 'bx:home-smile']" />
 
-      {/**
-       * @component Intro
-       * {@link https://github.com/modern-agile-team/dev-portfolio#intro}
-       */}
-      <Intro
+      {/* <Intro
         id="['Intro', 'clarity:cursor-hand-open-line']"
         backgroundColor={color.mainColor}
         titleColor={color.pointColor}
         shortIntroColor="white"
-      />
+      /> */}
 
-      {/**
-       * Just introduction for TechStackInput component.
-       *
-       * If you want to view internal of TeckstackInputInstruction,
-       * go to the './src/common/instruction/TeckstackInputInstruction.tsx'
-       */}
-      <TeckstackInputInstruction id="['TechStackInput', 'fa:stack-overflow']" />
+      {/* <TeckstackInputInstruction id="['TechStackInput', 'fa:stack-overflow']" /> */}
 
-      {/**
-       * TechStackInput used only to find the logoName value in the TechStackList.
-       *
-       * @component TechStackInput
-       * {@link none}
-       */}
-      <TechStackInput />
+      {/* <TechStackInput /> */}
 
-      {/**
-       * @component TechStackList
-       * {@link https://github.com/modern-agile-team/dev-portfolio#techstacklist}
-       */}
       <TechStackListTitle id="['TechStackList', 'bx:coin-stack']">
         Tech Stack List
       </TechStackListTitle>
@@ -194,36 +148,12 @@ function App() {
         ]}
       />
 
-      {/**
-       * @component ProgressBar
-       * {@link https://github.com/modern-agile-team/dev-portfolio#progressbar}
-       *
-       * If you want to view ProgressBar component,
-       * go to the './src/common/instruction/ProgressBarInstruction.tsx'
-       */}
       <ProgressBarInstruction id="['ProgressBar', 'ci:bar-chart-horizontal']" />
 
-      {/**
-       * @component Skill
-       * {@link https://github.com/modern-agile-team/dev-portfolio#skill}
-       *
-       * If you want to view Skill component,
-       * go to the './src/common/instruction/SkillInstruction.tsx'
-       */}
       <SkillInstruction id="['Skill', 'charm:stack']" />
 
-      {/**
-       * Just introduction for Carousel, Gallery and Masonry.
-       *
-       * If you want to view internal of DisplayPortfolioInstruction,
-       * go to the './src/common/instruction/DisplayPortfolioInstruction.tsx'
-       */}
       <DisplayPortfolioInstruction />
 
-      {/**
-       * @component Carousel
-       * {@link https://github.com/modern-agile-team/dev-portfolio#carousel}
-       */}
       <CarouselWrap>
         <Carousel id="['Carousel', 'bx:carousel']">
           <Item title="1" />
@@ -232,10 +162,6 @@ function App() {
         </Carousel>
       </CarouselWrap>
 
-      {/**
-       * @component Gallery
-       * {@link https://github.com/modern-agile-team/dev-portfolio#gallery}
-       */}
       <Gallery id="['Gallery', 'clarity:image-gallery-line']">
         {[1, 2, 3, 4, 5, 6, 7, 8, 9].map(idx => (
           <Item
@@ -246,10 +172,6 @@ function App() {
         ))}
       </Gallery>
 
-      {/**
-       * @component Masonry
-       * {@link https://github.com/modern-agile-team/dev-portfolio#masonry}
-       */}
       <Masonry id="['Masonry', 'ri:layout-masonry-line']">
         <Image src="https://picsum.photos/600/600/?random" />
         <Image src="https://picsum.photos/600/900/?random" />
@@ -266,19 +188,8 @@ function App() {
         <Image src="https://picsum.photos/700/600/?random" />
       </Masonry>
 
-      {/**
-       * @component VisitorCounter
-       * {@link https://github.com/modern-agile-team/dev-portfolio#visitorcounter}
-       *
-       * If you want to view Card component,
-       * go to the './src/common/instruction/VisitorCounterInstruction.tsx'
-       */}
       <VisitorCounterInstruction id="['VisitorCounter', 'mdi:counter']" />
 
-      {/**
-       * @component VisitorComment
-       * {@link https://github.com/modern-agile-team/dev-portfolio#visitorcomment}
-       */}
       <VisitorCommentTitle id="['VisitorComment', 'bx:comment-dots']">
         Visitor Comments
       </VisitorCommentTitle>
@@ -298,45 +209,14 @@ function App() {
         listDateColor={color.pointColor}
       />
 
-      {/**
-       * @component Card
-       * {@link https://github.com/modern-agile-team/dev-portfolio#card}
-       *
-       * If you want to view Card component,
-       * go to the './src/common/instruction/CardInstruction.tsx'
-       */}
       <CardInstruction id="['Card', 'bi:card-list']" />
 
-      {/**
-       * @component Experience
-       * {@link https://github.com/modern-agile-team/dev-portfolio#experience}
-       */}
       <Experience id="['Experience', 'carbon:list-boxes']" theme="vertical" />
 
-      {/**
-       * @component Channel
-       * {@link https://github.com/modern-agile-team/dev-portfolio#channel}
-       *
-       * @component Channels
-       * {@link https://github.com/modern-agile-team/dev-portfolio#channels}
-       *
-       * If you want to view Channel and Channels component,
-       * go to the './src/common/instruction/ChannelInstruction.tsx'
-       */}
       <ChannelInstruction id="['Channel', 'fluent:channel-48-filled']" />
 
-      {/**
-       * Just introduction for Contact.
-       *
-       * If you want to view internal of ContactInstruction,
-       * go to the './src/common/instruction/ContactInstruction.tsx'
-       */}
       <ContactInstruction />
 
-      {/**
-       * @component Contact
-       * {@link https://github.com/modern-agile-team/dev-portfolio#contact}
-       */}
       <Contact
         id="['Contact', 'fluent:contact-card-20-regular']"
         titleColor={color.pointColor}
@@ -381,11 +261,6 @@ function App() {
 
 export default App;
 
-/**
- * Just styled component for TechStackList's title
- *
- * If you don't need this, delete both TechStackListTitle component and the style components below.
- */
 const TechStackListTitle = styled.h1`
   color: ${color.mainColor};
   margin: 1em 1em;
@@ -393,21 +268,11 @@ const TechStackListTitle = styled.h1`
   border-bottom: 1px solid;
 `;
 
-/**
- * Just styled component for VisitorComment's title
- *
- * If you don't need this, delete both VisitorCommentTitle component and the style components below.
- */
 const VisitorCommentTitle = styled.h1`
   margin: 1em 1em 0 1em;
   padding-bottom: 15px;
 `;
 
-/**
- * Just styled component for Carousel's title
- *
- * If you don't need this, delete both CarouselWrap component and the style components below.
- */
 const CarouselWrap = styled.div`
   background-color: ${color.mainColor};
   padding: 2em 0;
