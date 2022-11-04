@@ -1,5 +1,3 @@
-import { Gallery, Item, Masonry, Image, Carousel } from "dev-portfolio";
-import color from "../common/style/theme";
 import styled from "styled-components";
 
 export default function TeamProject() {
@@ -30,24 +28,9 @@ export default function TeamProject() {
         </SmallSpan>
         <SmallSpan>- 결과</SmallSpan>
         <SmallSpan>1. 회원수 360명 유치</SmallSpan>
+        <SmallSpan>2. 교내 19개 동아리의 각 관리 페이지 개설</SmallSpan>
+        <SmallSpan>3. 구글 검색 '인덕대 동그라미' 최상단 위치</SmallSpan>
       </Container>
-
-      <CarouselWrap>
-        <Carousel>
-          <Item title="1" />
-          <Item title="2" />
-          <Item title="3" />
-        </Carousel>
-      </CarouselWrap>
-      <Gallery>
-        {[1, 2, 3, 4, 5, 6, 7, 8, 9].map(idx => (
-          <Item
-            key={idx}
-            hoverdInnerBorderColor={color.mainColor}
-            titleColor={color.pointColor}
-          />
-        ))}
-      </Gallery>
     </>
   );
 }
@@ -55,13 +38,6 @@ const Container = styled.div`
   margin-left: 30px;
   display: flex;
   flex-direction: column;
-`;
-const CarouselWrap = styled.div`
-  background-color: ${color.mainColor};
-  padding: 2em 0;
-  svg {
-    color: white;
-  }
 `;
 
 const SmallSpan = styled.span`

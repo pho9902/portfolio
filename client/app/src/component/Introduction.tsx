@@ -49,13 +49,6 @@ const Introduction = ({ id }: { id: string }) => {
             <Smallspan>학교 : </Smallspan>
             <Smallspan>인덕대학교 (재학중)</Smallspan>
           </div>
-          <div>
-            <Smallspan>경력 :</Smallspan>
-            <br />
-            <Smallspan>
-              - 메가넥스트 : 웹 개발자 (22/08/16 ~ 22/10/17 수습과정)
-            </Smallspan>
-          </div>
         </LeftInfo>
         <RightInfo>
           <div>

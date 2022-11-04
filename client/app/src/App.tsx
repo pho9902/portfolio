@@ -1,41 +1,37 @@
 /* This is imported components of dev-portfolio library */
-import { Header, Contact, Experience, VisitorComment } from "dev-portfolio";
+import { Header, Contact, Experience, Gallery, Item } from "dev-portfolio";
 import Introduction from "./component/Introduction";
 import styled from "styled-components";
 import color from "./common/style/theme";
-import useComment from "./hooks/useComment";
 import "./App.css";
 import TechList from "./component/TechList";
 import TeamProject from "./component/TeamProject";
+import Contribution from "./component/Contribution";
 
 function App() {
-  const {
-    comment,
-    commentList,
-    password,
-    nickname,
-    handleChangeDescription,
-    handleChangeNickname,
-    handleChangePassword,
-    handleCreateComment,
-  } = useComment();
-
   return (
     <div className="App">
       <Header
-        headerBackgroundColor={color.lightGrey}
+        headerBackgroundColor={color.mainColor}
         logoOption={{
           redirectUrl: "/",
           title: "Front-end Developer | 박현우",
           logoHidden: true,
-          titleColor: `gray`,
+          titleColor: `${color.pointColor}`,
           titleSize: "30px",
         }}
         channels={[
           {
             name: "github",
             redirectUrl: "https://github.com/pho9902",
-            color: `gray`,
+            color: `${color.pointColor}`,
+            size: "30px",
+          },
+          {
+            name: "notion",
+            redirectUrl:
+              "https://www.notion.so/25f5a56ccbe94545be0a4608ca55f026",
+            color: `${color.pointColor}`,
             size: "30px",
           },
         ]}
@@ -47,7 +43,7 @@ function App() {
           mainTitleBorderColor: "white",
           iconName: "ant-design:menu-fold-outlined", //Refer to the guidelines.
           iconSize: "28px",
-          iconColor: `gray`,
+          iconColor: `${color.pointColor}`,
           iconMargin: "0px 12px 0px 12px",
           itemTextColor: "white",
           itemTextAlign: "left",
@@ -62,31 +58,60 @@ function App() {
       <Title id="['TechStackList', 'bx:coin-stack']">Tech Stack List</Title>
       <TechList />
 
+      <Experience
+        historyList={[
+          {
+            startDate: "2021.05",
+            endDate: "2022.02",
+            title: "모던 애자일",
+            description:
+              '인덕대학교 교내 소프트웨어 개발 동아리 (교내 동아리 중개 플랫폼 "동그라미" 개발, 유지보수',
+          },
+          {
+            startDate: "2022.08.16",
+            endDate: "2022.10.17",
+            title: "메가넥스트",
+            description:
+              "신입 웹 개발자 포지션 (메인 포털 퍼블리싱, 동영상 학습창 개발)",
+          },
+        ]}
+      />
       <Title id="['TeamProject(동그라미)', 'bx:coin-stack']">
         Team Project(동그라미)
       </Title>
       <TeamProject />
+      <Title id="['ProjectContribution(동그라미)', 'bx:coin-stack']">
+        Project Contribution(동그라미)
+      </Title>
+      <Contribution />
 
-      <VisitorCommentTitle id="['VisitorComment', 'bx:comment-dots']">
-        Visitor Comments
-      </VisitorCommentTitle>
-      <VisitorComment
-        backgroundColor={color.mainColor}
-        progressbarColor={color.pointColor}
-        handleChangeDescription={handleChangeDescription}
-        handleChangeNickname={handleChangeNickname}
-        handleChangePassword={handleChangePassword}
-        handleCreateComment={handleCreateComment}
-        comment={comment}
-        nickname={nickname}
-        password={password}
-        commentList={commentList}
-        buttonColor={color.mainColor}
-        listNicknameColor={color.mainColor}
-        listDateColor={color.pointColor}
-      />
-
-      <Experience id="['Experience', 'carbon:list-boxes']" theme="vertical" />
+      <Title id="['Presentation', 'bx:coin-stack']">Presentation</Title>
+      <Wrap>
+        <span>
+          팀 활동 중 제가 진행한 CS지식, 개발 지식 관련 발표 활동
+          영상자료입니다.
+        </span>
+        <Gallery>
+          <Item
+            title="Javascript 에서의 this"
+            description=""
+            redirectURL="https://youtu.be/t-FzM7QiS2U"
+            src="img/this.png"
+          />
+          <Item
+            title="클로져&스코프"
+            description=""
+            redirectURL="https://youtu.be/rGpzdfWUJtE"
+            src="img/closure.png"
+          />
+          <Item
+            title="Promise,async/await"
+            description=""
+            redirectURL="https://www.youtube.com/watch?v=QJPJ-_SQKAg&list=PL3KMG4MoejTqN4xUNKoXEHPUKH6-EAs64&index=2"
+            src="img/promise.png"
+          />
+        </Gallery>
+      </Wrap>
 
       <Contact
         id="['Contact', 'fluent:contact-card-20-regular']"
@@ -96,12 +121,13 @@ function App() {
         channels={[
           {
             name: "github",
-            redirectUrl: "https://",
+            redirectUrl: "https://github.com/pho9902",
             color: `${color.pointColor}`,
           },
           {
-            name: "facebook",
-            redirectUrl: "https://",
+            name: "notion",
+            redirectUrl:
+              "https://www.notion.so/25f5a56ccbe94545be0a4608ca55f026",
             color: `${color.pointColor}`,
           },
         ]}
@@ -113,15 +139,15 @@ function App() {
             descriptionColor: `${color.lightGrey}`,
           },
           {
-            title: "Give me a call",
+            title: "Phone",
             titleColor: `${color.pointColor}`,
-            description: "T. +82 (0)10 1234 5678",
+            description: "T. +82 (0)10 9169 3840",
             descriptionColor: `${color.lightGrey}`,
           },
           {
-            title: "Or, why don’t you email me?",
+            title: "E-mail",
             titleColor: `${color.pointColor}`,
-            description: "dev-portfolio@gmail.com",
+            description: "bagh9902@gmail.com",
             descriptionColor: `${color.lightGrey}`,
           },
         ]}
@@ -139,7 +165,20 @@ const Title = styled.h1`
   border-bottom: 1px solid;
 `;
 
-const VisitorCommentTitle = styled.h1`
-  margin: 1em 1em 0 1em;
-  padding-bottom: 15px;
+const Wrap = styled.div`
+  padding: 0 2em;
 `;
+
+const LinkSpan = styled.span`
+  cursor: pointer;
+  font-size: large;
+  &:hover {
+    color: #90e2d6;
+  }
+`;
+
+const LinkWrap = styled.div`
+  display: flex;
+`;
+
+const LinkItem = styled.div``;
